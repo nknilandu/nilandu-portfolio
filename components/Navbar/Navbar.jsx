@@ -11,6 +11,7 @@ import {
   TextAlignStart,
 } from "lucide-react";
 import React, { useEffect } from "react";
+import Banner from "../Banner/Banner";
 
 const Navbar = () => {
   const list = (
@@ -71,7 +72,7 @@ const Navbar = () => {
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content flex flex-col">
           {/* Navbar */}
-          <div className=" bg-base-content/2 sticky top-0 w-full backdrop-blur-xl border-b border-base-content/10">
+          <div className=" bg-base-content/2 sticky z-100 top-0 w-full backdrop-blur-xl border-b border-base-content/10">
             <div className="navbar max-w-7xl mx-auto px-4">
               <div className="flex-none lg:hidden">
                 <label htmlFor="my-drawer-2" aria-label="open sidebar">
@@ -121,15 +122,15 @@ const Navbar = () => {
             </div>
           </div>
           {/* Page content here */}
-          Content
+          <Banner></Banner>
         </div>
-        <div className="drawer-side">
+        <div className="drawer-side z-200">
           <label
             htmlFor="my-drawer-2"
             aria-label="close sidebar"
             className="drawer-overlay"
           ></label>
-          <ul className="menu bg-base-200 backdrop-blur-xl min-h-full w-80 p-4 space-y-2 pt-5">
+          <ul className="menu bg-base-200  backdrop-blur-xl min-h-full w-80 p-4 space-y-2 pt-5">
             {/* Sidebar content here */}
             {list}
           </ul>
