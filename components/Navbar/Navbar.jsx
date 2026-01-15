@@ -10,7 +10,7 @@ import {
   SunMedium,
   TextAlignStart,
 } from "lucide-react";
-import React from "react";
+import React, { useEffect } from "react";
 
 const Navbar = () => {
   const list = (
@@ -48,6 +48,23 @@ const Navbar = () => {
     </>
   );
 
+  // +++++++++++ control theme +++++++++++++++++
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme") || "light";
+    const html = document.querySelector("html");
+    html.setAttribute("data-theme", savedTheme);
+  }, []);
+
+  const handleTheme = (e) => {
+    const isChecked = e.target.checked;
+    // console.log(isChecked)
+    const html = document.querySelector("html");
+    const theme = isChecked ? "dark" : "light";
+
+    html.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+  };
+
   return (
     <div>
       <div className="drawer">
@@ -83,6 +100,8 @@ const Navbar = () => {
                     {/* this hidden checkbox controls the state */}
                     <input
                       type="checkbox"
+                      onClick={handleTheme}
+                      defaultChecked={localStorage.getItem("theme") === "dark"}
                       className="theme-controller rounded-full hover:bg-base-content/10 w-10 h-10 transition-all"
                       value="synthwave"
                     />

@@ -25,6 +25,7 @@ const Home = () => {
       <main className="relative z-10">
         <Navbar></Navbar>
         <Banner></Banner>
+        <button className="btn btn-primary">Click</button>
       </main>
     </div>
   );
