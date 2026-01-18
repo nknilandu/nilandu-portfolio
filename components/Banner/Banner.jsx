@@ -2,10 +2,11 @@ import { Facebook, Github, Linkedin, Send } from "lucide-react";
 import avater from "../../src/assets/avaterImg.jpg";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa6";
+import { LuDownload } from "react-icons/lu";
 
 const Banner = () => {
   return (
-    <div className="max-w-7xl mx-auto px-4 relative">
+    <div className="relative">
       {/* Background Blob */}
       <div
         className="hidden md:block md:absolute w-[300px] h-[300px]  bg-gradient-to-br from-emerald-500/30 to-purple-500/30 blur-3xl
@@ -18,8 +19,8 @@ const Banner = () => {
         <div className="h-full lg:mt-10 lg:mr-5 flex flex-row lg:flex-col gap-6 mb-10 lg:mb-0 lg:mx-0 mx-auto lg:pl-20 lg:pr-10">
           {/* LinkedIn */}
           <div
-            className="group w-10 h-10 flex items-center justify-center rounded-full
-                  bg-base-content/10 backdrop-blur-lg border border-base-content/10
+            className="group w-12 h-12 flex items-center justify-center rounded-full
+                  bg-base-content/5 backdrop-blur-lg border border-base-content/10
                   transition-all duration-300
                   hover:border-blue-600/60
                   hover:shadow-[0_0_15px_rgba(10,102,194,0.6)]"
@@ -32,8 +33,8 @@ const Banner = () => {
 
           {/* GitHub */}
           <div
-            className="group w-10 h-10 flex items-center justify-center rounded-full
-                  bg-base-content/10 backdrop-blur-lg border border-base-content/10
+            className="group w-12 h-12 flex items-center justify-center rounded-full
+                  bg-base-content/5 backdrop-blur-lg border border-base-content/10
                   transition-all duration-300
                   hover:border-secondary/40
                   hover:shadow-[0_0_15px_rgba(255,255,255,0.5)]"
@@ -46,8 +47,8 @@ const Banner = () => {
 
           {/* Facebook */}
           <div
-            className="group w-10 h-10 flex items-center justify-center rounded-full
-                  bg-base-content/10 backdrop-blur-lg border border-base-content/10
+            className="group w-12 h-12 flex items-center justify-center rounded-full
+                  bg-base-content/5 backdrop-blur-lg border border-base-content/10
                   transition-all duration-300
                   hover:border-blue-600/60
                   hover:shadow-[0_0_15px_rgba(24,119,242,0.6)]"
@@ -92,10 +93,14 @@ const Banner = () => {
             </p>
 
             {/* Button */}
-            <div>
-              <button className="flex items-center justify-center gap-2 px-5 py-2 rounded-full font-bold text-sm sm:text-sm text-base-content bg-base-content/10 border border-secondary/30 backdrop-blur-lg shadow-[0_0_10px_rgba(168,85,247,0.3)] transition-all duration-300 hover:bg-purple-500/10 hover:text-secondary hover:shadow-[0_0_20px_rgba(168,85,247,0.6)] hover:-translate-y-0.5">
+            <div className="flex flex-col md:flex-row gap-3 md:mb-5">
+              <button className="flex items-center justify-center gap-2 px-5 py-2 rounded-full font-bold text-sm sm:text-sm text-base-content border border-primary/30 backdrop-blur-lg shadow-[0_0_10px_rgba(16,185,129,0.3)] transition-all duration-300 bg-primary/5 hover:bg-primary/10 hover:text-primary hover:shadow-[0_0_20px_rgba(16,185,129,0.6)] hover:-translate-y-0.5">
                 Say Hi
                 <Send size={15} />
+              </button>
+              <button className="flex items-center justify-center gap-2 px-5 py-2 rounded-full font-bold text-sm sm:text-sm text-base-content border border-secondary/30 backdrop-blur-lg shadow-[0_0_10px_rgba(168,85,247,0.3)] transition-all duration-300 bg-secondary/5 hover:bg-secondary/10 hover:text-secondary hover:shadow-[0_0_20px_rgba(168,85,247,0.6)] hover:-translate-y-0.5">
+                Download CV
+                <LuDownload size={15} />
               </button>
             </div>
           </div>

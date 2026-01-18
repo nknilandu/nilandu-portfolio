@@ -12,6 +12,12 @@ import {
 } from "lucide-react";
 import React, { useEffect } from "react";
 import Banner from "../Banner/Banner";
+import AboutMe from "../AboutMe/AboutMe";
+import TechnicalSkill from "../TechnicalSkill/TechnicalSkill";
+import Qualification from "../Qualification/Qualification";
+import Projects from "../Projects/Projects";
+import Footer from "../Footer/Footer";
+import ContactInfo from "../ContactInfo/ContactInfo";
 
 const Navbar = () => {
   const list = (
@@ -122,7 +128,15 @@ const Navbar = () => {
             </div>
           </div>
           {/* Page content here */}
-          <Banner></Banner>
+          <div className="max-w-7xl mx-auto px-4">
+            <Banner></Banner>
+            <AboutMe></AboutMe>
+            <TechnicalSkill></TechnicalSkill>
+            <Qualification></Qualification>
+            <Projects></Projects>
+            <ContactInfo></ContactInfo>
+          </div>
+          <Footer></Footer>
         </div>
         <div className="drawer-side z-200">
           <label
