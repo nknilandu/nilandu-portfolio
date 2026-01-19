@@ -10,6 +10,8 @@ import { Toaster } from "react-hot-toast";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
+import ProjectDetails from "../pages/ProjectDetails/ProjectDetails.jsx";
+import Root from "../pages/Root/Root.jsx";
 
 // Initialize AOS globally (like Toastify)
 AOS.init({
@@ -21,18 +23,27 @@ AOS.init({
 const router = createBrowserRouter([
   {
     path: "/",
-    Component: Home,
+    Component: Root,
     errorElement: <AppNotFound></AppNotFound>,
-  },
-  {
-    path: "*",
-    Component: PageNotFound,
+    children: [
+      {
+        index: true,
+        Component: Home,
+      },
+      {
+        path: "/projects/:id",
+        Component: ProjectDetails,
+      },
+      {
+        path: "*",
+        Component: PageNotFound,
+      },
+    ],
   },
 ]);
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <RouterProvider router={router} />
-    <Toaster position="bottom-center" reverseOrder={false} />
   </StrictMode>
 );

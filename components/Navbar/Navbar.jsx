@@ -8,16 +8,14 @@ import {
   Sun,
   TextAlignStart,
 } from "lucide-react";
-import { useEffect } from "react";
 import Banner from "../Banner/Banner";
 import AboutMe from "../AboutMe/AboutMe";
 import TechnicalSkill from "../TechnicalSkill/TechnicalSkill";
 import Qualification from "../Qualification/Qualification";
 import Projects from "../Projects/Projects";
-import Footer from "../Footer/Footer";
 import ContactInfo from "../ContactInfo/ContactInfo";
 import { Element, Link as ScrollLink } from "react-scroll";
-import logo from "../../src/assets/logo.png"
+import logo from "../../src/assets/logo.png";
 
 const Navbar = () => {
   const list = (
@@ -105,13 +103,6 @@ const Navbar = () => {
     </>
   );
 
-  // +++++++++++ control theme +++++++++++++++++
-  useEffect(() => {
-    const savedTheme = localStorage.getItem("theme") || "light";
-    const html = document.querySelector("html");
-    html.setAttribute("data-theme", savedTheme);
-  }, []);
-
   const handleTheme = (e) => {
     const isChecked = e.target.checked;
     // console.log(isChecked)
@@ -140,8 +131,11 @@ const Navbar = () => {
 
               <div className="w-full flex justify-between items-center">
                 <div className="font-bold flex justify-center items-center gap-1">
-                    <img src={logo} alt="logo" className="w-5 h-5 mb-1"/>
-                    <p> Nil<span className="text-purple-500">andu</span></p>
+                  <img src={logo} alt="logo" className="w-5 h-5 mb-1" />
+                  <p>
+                    {" "}
+                    Nil<span className="text-purple-500">andu</span>
+                  </p>
                 </div>
                 <div className="flex-1 hidden lg:flex lg:justify-center">
                   <ul className="menu menu-horizontal text-center flex justify-center gap-2">
@@ -150,8 +144,6 @@ const Navbar = () => {
                   </ul>
                 </div>
                 <div className="flex justify-end">
-                  {/* <button className="btn btn-primary btn-sm rounded-full">Hire Me</button> */}
-
                   {/* ==================== */}
 
                   <label className="swap swap-rotate">
@@ -185,6 +177,7 @@ const Navbar = () => {
             </Element>
 
             <AboutMe></AboutMe>
+
             <Element name="tech">
               <TechnicalSkill></TechnicalSkill>
             </Element>
@@ -201,7 +194,7 @@ const Navbar = () => {
               <ContactInfo></ContactInfo>
             </Element>
           </div>
-          <Footer></Footer>
+          {/* ========== */}
         </div>
         <div className="drawer-side z-200">
           <label

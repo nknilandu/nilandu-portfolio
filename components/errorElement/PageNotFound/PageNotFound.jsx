@@ -2,7 +2,7 @@ import React from "react";
 
 const PageNotFound = () => {
   return (
-    <div className="w-screen h-screen flex flex-col justify-center items-center px-10 gap-2">
+    <div className="w-full h-[85vh] flex flex-col justify-center items-center px-10 gap-2">
       <title>Error | Nilandu</title>
       <div className="text-center text-xs">
         <h1 className="text-7xl font-extrabold text-base-content/90">404</h1>

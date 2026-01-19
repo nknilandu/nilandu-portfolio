@@ -2,7 +2,7 @@ import React from "react";
 
 const AppNotFound = () => {
   return (
-    <div className="w-screen h-screen flex flex-col justify-center items-center px-10 gap-2">
+    <div className="w-full h-[85vh] flex flex-col justify-center items-center px-10 gap-2">
       <title>Error | Nilandu</title>
       <h1 className="text-6xl font-black text-base-content/70">Oops!</h1>
       <p className="text-xl"> App not found!</p>

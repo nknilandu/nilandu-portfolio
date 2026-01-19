@@ -1,0 +1,86 @@
+[
+  {
+    "id": "aojt9e48nic1",
+    "title": "AssetVerse - Corporate Asset Management System",
+    "description": "AssetVerse is a modern, enterprise-grade web application designed to help companies manage their internal assets efficiently. The platform streamlines the process of assigning assets, requesting assets, affiliating employees with companies, and tracking resources in a fully automated environment.",
+    "img": "https://raw.githubusercontent.com/nknilandu/AssetVerse/refs/heads/main/proj1.webp",
+    "tech": [
+      "React.js",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Firebase",
+      "Tailwind CSS",
+      "Netlify",
+      "Vercel"
+    ],
+    "github": "https://github.com/nknilandu/AssetVerse.git",
+    "live": "https://asset-verse-com.netlify.app/",
+    "imgHoverScale": "scale-105",
+    "challengeFaced": [
+      "Integrating real-time asset tracking across multiple departments",
+      "Ensuring secure user authentication and role-based access",
+      "Optimizing database queries for large datasets"
+    ],
+    "futureImprovement": [
+      "Add advanced analytics dashboard",
+      "Implement AI-based asset allocation suggestions",
+      "Add mobile app support"
+    ]
+  },
+  {
+    "id": "djifwjfcjnf2",
+    "title": "Import Export Hub",
+    "description": "Import Export Hub is a modern web platform designed to simplify global trade management. Users can browse exportable products, import items directly into their personal dashboard, and manage exports with ease — all within a single, secure, and responsive web application. This is a single-page application (SPA) built with a clean and modern UI, real-time synchronization user management.",
+    "img": "https://raw.githubusercontent.com/nknilandu/import-export-hub-a10/refs/heads/main/proj2.webp",
+    "tech": [
+      "React.js",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Firebase",
+      "Tailwind CSS",
+      "Netlify",
+      "Vercel"
+    ],
+    "github": "https://github.com/nknilandu/hero-app-react-a8.git",
+    "live": "https://heroio-nknilandu.netlify.app/",
+    "imgHoverScale": "scale-105",
+    "challengeFaced": [
+      "Handling real-time synchronization of imports and exports",
+      "Implementing secure authentication for multiple user roles",
+      "Ensuring smooth performance on data-heavy dashboards"
+    ],
+    "futureImprovement": [
+      "Integrate payment gateway for transactions",
+      "Add multi-language support",
+      "Enhance reporting and analytics features"
+    ]
+  },
+  {
+    "id": "ofdjk5weigjf",
+    "title": "HERO.IO – Productive App Landing Page",
+    "description": "A modern, responsive landing page built for showcasing mobile applications. HERO.IO focuses on clean UI, strong visual hierarchy, and conversion-friendly sections to present apps in a professional and engaging way. Designed to highlight app features, platform availability, and user trust with a sleek hero section and polished layout.",
+    "img": "https://github.com/nknilandu/hero-app-react-a8/blob/main/proj3.webp?raw=true",
+    "tech": [
+      "React.js",
+      "Tailwind CSS",
+      "Recharts",
+      "JavaScript",
+      "Netlify"
+    ],
+    "github": "https://github.com/nknilandu/hero-app-react-a8.git",
+    "live": "https://heroio-nknilandu.netlify.app/",
+    "imgHoverScale": "scale-105",
+    "challengeFaced": [
+      "Optimizing responsiveness across devices",
+      "Implementing smooth animations without affecting performance",
+      "Designing sections that maximize user engagement and conversion"
+    ],
+    "futureImprovement": [
+      "Add dynamic content sections using API integration",
+      "Include analytics for user interaction tracking",
+      "Optimize SEO for better visibility"
+    ]
+  }
+]

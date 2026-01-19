@@ -1,64 +1,12 @@
-import React from "react";
-import project1 from "../../src/assets/proj1.webp";
-import project2 from "../../src/assets/proj2.webp";
-import project3 from "../../src/assets/proj3.webp";
+import { useEffect, useState } from "react";
 import { FaGithub, FaRocket } from "react-icons/fa";
-
-const projects = [
-  {
-    title: "AssetVerse - Corporate Asset Management System",
-    description:
-      "AssetVerse is a modern, enterprise-grade web application designed to help companies manage their internal assets efficiently. The platform streamlines the process of assigning assets, requesting assets, affiliating employees with companies, and tracking resources in a fully automated environment.",
-    img: project1,
-    tech: [
-      "React.js",
-      "Node.js",
-      "Express.js",
-      "MongoDB",
-      "Firebase",
-      "Tailwind CSS",
-      "Netlify",
-      "Vercel",
-    ],
-    github: "https://github.com/nknilandu/AssetVerse.git",
-    live: "https://asset-verse-com.netlify.app/",
-    imgHoverScale: "scale-105",
-  },
-  {
-    title: "Import Export Hub",
-    description:
-      "Import Export Hub is a modern web platform designed to simplify global trade management. Users can browse exportable products, import items directly into their personal dashboard, and manage exports with ease — all within a single, secure, and responsive web application. This is a single-page application (SPA) built with a clean and modern UI, real-time synchronization user management.",
-    img: project2,
-    tech: [
-      "React.js",
-      "Node.js",
-      "Express.js",
-      "MongoDB",
-      "Firebase",
-      "Tailwind CSS",
-      "Netlify",
-      "Vercel",
-    ],
-    github: "https://github.com/nknilandu/hero-app-react-a8.git",
-    live: "https://heroio-nknilandu.netlify.app/",
-    imgHoverScale: "scale-105",
-  },
-  {
-    title: "HERO.IO – Productive App Landing Page",
-    description:
-      "A modern, responsive landing page built for showcasing mobile applications. HERO.IO focuses on clean UI, strong visual hierarchy, and conversion-friendly sections to present apps in a professional and engaging way. Designed to highlight app features, platform availability, and user trust with a sleek hero section and polished layout.",
-    img: project3,
-    tech: ["React.js", "Tailwind CSS", "Recharts", "JavaScript", "Netlify"],
-    github: "https://github.com/nknilandu/hero-app-react-a8.git",
-    live: "https://heroio-nknilandu.netlify.app/",
-    imgHoverScale: "scale-105",
-  },
-
-  // Add more projects here
-];
+import { Link } from "react-router";
 
 const ProjectCard = ({ project }) => (
-  <div className="bg-base-content/5 rounded-2xl border border-base-content/10 backdrop-blur-lg group overflow-hidden">
+  <Link
+    to={`/projects/${project.id}`}
+    className="bg-base-content/5 rounded-2xl border border-base-content/10 backdrop-blur-lg group overflow-hidden"
+  >
     <div className="h-60 overflow-hidden">
       <img
         src={project.img}
@@ -96,10 +44,26 @@ const ProjectCard = ({ project }) => (
         </a>
       </div>
     </div>
-  </div>
+  </Link>
 );
 
 const Projects = () => {
+  const [projects, setProjects] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch("./projects.json")
+      .then((res) => res.json())
+      .then((data) => {
+        setProjects(data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error("Failed to load projects:", err);
+        setLoading(false);
+      });
+  }, []);
+
   return (
     <div data-aos="fade-up" data-aos-delay="100" className="mt-25">
       <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center">
@@ -111,11 +75,21 @@ const Projects = () => {
       <p className="text-center text-base-content/50">Recent 3 Projects</p>
       {/* ============ */}
 
-      <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {projects.map((project, idx) => (
-          <ProjectCard key={idx} project={project} />
-        ))}
-      </div>
+      {loading ? (
+        <div className="flex justify-center items-center h-[80vh]">
+          <div className="loader border-t-4 border-secondary rounded-full w-12 h-12 animate-spin"></div>
+        </div>
+      ) : !projects ? (
+        <div className="h-[50vh] flex items-center justify-center font-semibold text-gray-600">
+          Project not found.
+        </div>
+      ) : (
+        <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {projects.map((project, idx) => (
+            <ProjectCard key={idx} project={project} />
+          ))}
+        </div>
+      )}
     </div>
   );
 };
