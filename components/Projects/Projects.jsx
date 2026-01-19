@@ -1,12 +1,10 @@
 import { useEffect, useState } from "react";
-import { FaGithub, FaRocket } from "react-icons/fa";
+import { FaRocket } from "react-icons/fa";
+import { MdInfo } from "react-icons/md";
 import { Link } from "react-router";
 
 const ProjectCard = ({ project }) => (
-  <Link
-    to={`/projects/${project.id}`}
-    className="bg-base-content/5 rounded-2xl border border-base-content/10 backdrop-blur-lg group overflow-hidden"
-  >
+  <div className="bg-base-content/5 rounded-2xl border border-base-content/10 backdrop-blur-lg group overflow-hidden">
     <div className="h-60 overflow-hidden">
       <img
         src={project.img}
@@ -28,13 +26,12 @@ const ProjectCard = ({ project }) => (
         ))}
       </div>
       <div className="flex flex-col md:flex-row gap-3 mt-5 mb-2">
-        <a
-          href={project.github}
-          target="_blank"
+        <Link
+          to={`/projects/${project.id}`}
           className="w-full flex items-center justify-center gap-2 px-5 py-2 rounded-full font-bold text-sm text-base-content border border-primary/30 backdrop-blur-lg shadow-[0_0_10px_rgba(16,185,129,0.3)] transition-all duration-300 bg-primary/5 hover:bg-primary/10 hover:text-primary hover:shadow-[0_0_20px_rgba(16,185,129,0.6)] hover:-translate-y-0.5"
         >
-          GitHub <FaGithub size={15} />
-        </a>
+          Details <MdInfo size={15} />
+        </Link>
         <a
           href={project.live}
           target="_blank"
@@ -44,7 +41,7 @@ const ProjectCard = ({ project }) => (
         </a>
       </div>
     </div>
-  </Link>
+  </div>
 );
 
 const Projects = () => {

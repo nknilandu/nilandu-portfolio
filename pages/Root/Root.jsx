@@ -1,7 +1,8 @@
 import { useEffect } from "react";
-import { Toaster } from "react-hot-toast";
 import Footer from "../../components/Footer/Footer";
 import { Outlet } from "react-router";
+import ScrollToTop from "../../components/ScrollToTop/ScrollToTop";
+import { Toaster } from "react-hot-toast";
 
 const Root = () => {
   // +++++++++++ control theme +++++++++++++++++
@@ -30,6 +31,7 @@ const Root = () => {
         <Outlet></Outlet>
         <Footer></Footer>
         <Toaster />
+        <ScrollToTop></ScrollToTop>
       </main>
     </div>
   );
