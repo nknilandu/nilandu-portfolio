@@ -1,5 +1,5 @@
 import React from "react";
-import avater from "../../src/assets/aboutMe.png";
+import avater from "../../src/assets/aboutMe.webp";
 
 const AboutMe = () => {
   return (

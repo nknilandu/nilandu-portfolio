@@ -1,7 +1,7 @@
 import React from "react";
-import project1 from "../../src/assets/proj1.png";
-import project2 from "../../src/assets/proj2.png";
-import project3 from "../../src/assets/proj3.png";
+import project1 from "../../src/assets/proj1.webp";
+import project2 from "../../src/assets/proj2.webp";
+import project3 from "../../src/assets/proj3.webp";
 import { FaGithub, FaRocket } from "react-icons/fa";
 
 const projects = [

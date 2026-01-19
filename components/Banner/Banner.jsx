@@ -1,10 +1,15 @@
 import { Facebook, Github, Linkedin, Send } from "lucide-react";
-import avater from "../../src/assets/avaterImg.jpg";
+import avater from "../../src/assets/avaterImg.webp";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa6";
 import { LuDownload } from "react-icons/lu";
+import toast from "react-hot-toast";
 
 const Banner = () => {
+  const handleDownload = () => {
+    toast("Coming Soon");
+  };
+
   return (
     <div className="relative">
       {/* Background Blob */}
@@ -18,7 +23,10 @@ const Banner = () => {
         {/* Left Column: Socials and Text */}
         <div className="h-full lg:mt-10 lg:mr-5 flex flex-row lg:flex-col gap-6 mb-10 lg:mb-0 lg:mx-0 mx-auto lg:pl-20 lg:pr-10">
           {/* LinkedIn */}
-          <div
+          <a
+            href="https://www.linkedin.com/in/nilandu"
+            target="_blank"
+            rel="noopener noreferrer"
             className="group w-12 h-12 flex items-center justify-center rounded-full
                   bg-base-content/5 backdrop-blur-lg border border-base-content/10
                   transition-all duration-300
@@ -29,10 +37,13 @@ const Banner = () => {
               size={18}
               className="text-base-content transition-colors duration-300 group-hover:text-blue-600"
             />
-          </div>
+          </a>
 
           {/* GitHub */}
-          <div
+          <a
+            href="https://github.com/nknilandu"
+            target="_blank"
+            rel="noopener noreferrer"
             className="group w-12 h-12 flex items-center justify-center rounded-full
                   bg-base-content/5 backdrop-blur-lg border border-base-content/10
                   transition-all duration-300
@@ -43,10 +54,13 @@ const Banner = () => {
               size={18}
               className="text-base-content transition-colors duration-300 group-hover:text-secondary"
             />
-          </div>
+          </a>
 
           {/* Facebook */}
-          <div
+          <a
+            href="https://www.facebook.com/nknilandu"
+            target="_blank"
+            rel="noopener noreferrer"
             className="group w-12 h-12 flex items-center justify-center rounded-full
                   bg-base-content/5 backdrop-blur-lg border border-base-content/10
                   transition-all duration-300
@@ -57,7 +71,7 @@ const Banner = () => {
               size={18}
               className="text-base-content transition-colors duration-300 group-hover:text-blue-600"
             />
-          </div>
+          </a>
         </div>
 
         {/* Right Column: Text + Profile */}
@@ -94,11 +108,19 @@ const Banner = () => {
 
             {/* Button */}
             <div className="flex flex-col md:flex-row gap-3 md:mb-5">
-              <button className="flex items-center justify-center gap-2 px-5 py-2 rounded-full font-bold text-sm sm:text-sm text-base-content border border-primary/30 backdrop-blur-lg shadow-[0_0_10px_rgba(16,185,129,0.3)] transition-all duration-300 bg-primary/5 hover:bg-primary/10 hover:text-primary hover:shadow-[0_0_20px_rgba(16,185,129,0.6)] hover:-translate-y-0.5">
+              <a
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=nknilandu@gmail.com&su=Hello+Nilandu+-+Quick+Introduction&body=Hello+Nilandu,%0A%0AI+hope+this+message+finds+you+well.%0A%0AI+came+across+your+profile+and+wanted+to+reach+out+to+introduce+myself.%0AI+would+be+happy+to+connect+and+learn+more+about+your+work.%0A%0ALooking+forward+to+hearing+from+you.%0A%0ABest+regards,%0A[Your+Name]"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 px-5 py-2 rounded-full font-bold text-sm sm:text-sm text-base-content border border-primary/30 backdrop-blur-lg shadow-[0_0_10px_rgba(16,185,129,0.3)] transition-all duration-300 bg-primary/5 hover:bg-primary/10 hover:text-primary hover:shadow-[0_0_20px_rgba(16,185,129,0.6)] hover:-translate-y-0.5"
+              >
                 Say Hi
                 <Send size={15} />
-              </button>
-              <button className="flex items-center justify-center gap-2 px-5 py-2 rounded-full font-bold text-sm sm:text-sm text-base-content border border-secondary/30 backdrop-blur-lg shadow-[0_0_10px_rgba(168,85,247,0.3)] transition-all duration-300 bg-secondary/5 hover:bg-secondary/10 hover:text-secondary hover:shadow-[0_0_20px_rgba(168,85,247,0.6)] hover:-translate-y-0.5">
+              </a>
+              <button
+                onClick={handleDownload}
+                className="flex items-center justify-center gap-2 px-5 py-2 rounded-full font-bold text-sm sm:text-sm text-base-content border border-secondary/30 backdrop-blur-lg shadow-[0_0_10px_rgba(168,85,247,0.3)] transition-all duration-300 bg-secondary/5 hover:bg-secondary/10 hover:text-secondary hover:shadow-[0_0_20px_rgba(168,85,247,0.6)] hover:-translate-y-0.5"
+              >
                 Download CV
                 <LuDownload size={15} />
               </button>
@@ -112,7 +134,7 @@ const Banner = () => {
               <div className="absolute inset-0 z-10 border-2 border-gray-400/50 rounded-[30%_60%_50%_50%/30%_30%_40%_30%] animate-[spin_60s_linear_infinite]" />
 
               {/* Profile Image */}
-              <div className="relative z-20 w-full aspect-square rounded-[30%_70%_70%_30%/30%_30%_70%_70%] overflow-hidden border border-primary bg-emerald-500 shadow-[0_0_20px_rgba(16,185,129,0.8)]">
+              <div className="relative z-20 w-full aspect-square rounded-[30%_70%_70%_30%/30%_30%_70%_70%] overflow-hidden border border-primary bg-base-content/10 shadow-[0_0_20px_rgba(16,185,129,0.8)]">
                 <img
                   src={avater}
                   alt="profile"

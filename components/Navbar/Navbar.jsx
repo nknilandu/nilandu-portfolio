@@ -1,16 +1,14 @@
 import {
   GraduationCap,
   House,
-  Layers,
   Layers2,
   Moon,
   Rocket,
   SendHorizontal,
   Sun,
-  SunMedium,
   TextAlignStart,
 } from "lucide-react";
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import Banner from "../Banner/Banner";
 import AboutMe from "../AboutMe/AboutMe";
 import TechnicalSkill from "../TechnicalSkill/TechnicalSkill";
@@ -18,39 +16,91 @@ import Qualification from "../Qualification/Qualification";
 import Projects from "../Projects/Projects";
 import Footer from "../Footer/Footer";
 import ContactInfo from "../ContactInfo/ContactInfo";
+import { Element, Link as ScrollLink } from "react-scroll";
+import logo from "../../src/assets/logo.png"
 
 const Navbar = () => {
   const list = (
     <>
       <li>
-        <div className="flex rounded-full justify-start items-center lg:justify-center lg:px-3 lg:py-1">
-          <House size={14} className="text-purple-500" />
-          <p>Home</p>
-        </div>
+        <ScrollLink
+          to="banner"
+          smooth
+          spy
+          offset={-80}
+          duration={500}
+          activeClass="bg-purple-500/15 text-purple-500"
+          className="h-fit w-full rounded-full px-4 py-2 lg:px-3 lg:py-1"
+        >
+          <div className="flex justify-center items-center gap-1.5">
+            <House size={14} className="text-purple-500" />
+            <p>Home</p>
+          </div>
+        </ScrollLink>
       </li>
       <li>
-        <div className="flex rounded-full justify-start items-center lg:justify-center lg:px-3 lg:py-1">
-          <Layers2 size={14} className="text-yellow-500" />
-          <p>Tech Stack</p>
-        </div>
+        <ScrollLink
+          to="tech"
+          smooth
+          spy
+          offset={-110}
+          duration={500}
+          activeClass="bg-yellow-500/15 text-yellow-500"
+          className="h-fit w-full rounded-full px-4 py-2 lg:px-3 lg:py-1"
+        >
+          <div className="flex justify-center items-center gap-1.5">
+            <Layers2 size={14} className="text-yellow-500" />
+            <p>Tech Stack</p>
+          </div>
+        </ScrollLink>
       </li>
       <li>
-        <div className="flex rounded-full justify-start items-center lg:justify-center lg:px-3 lg:py-1">
-          <GraduationCap size={16} className="text-cyan-500" />
-          <p>Qualification</p>
-        </div>
+        <ScrollLink
+          to="journey"
+          smooth
+          spy
+          offset={-110}
+          duration={500}
+          activeClass="bg-cyan-500/15 text-cyan-500"
+          className="h-fit w-full rounded-full px-4 py-2 lg:px-3 lg:py-1"
+        >
+          <div className="flex justify-center items-center gap-1.5">
+            <GraduationCap size={16} className="text-cyan-500" />
+            <p>Qualification</p>
+          </div>
+        </ScrollLink>
       </li>
       <li>
-        <div className="flex rounded-full justify-start items-center lg:justify-center lg:px-3 lg:py-1">
-          <Rocket size={14} className="text-pink-500" />
-          <p>Projects</p>
-        </div>
+        <ScrollLink
+          to="project"
+          smooth
+          spy
+          offset={-110}
+          duration={500}
+          activeClass="bg-pink-500/15 text-pink-500"
+          className="h-fit w-full rounded-full px-4 py-2 lg:px-3 lg:py-1"
+        >
+          <div className="flex justify-center items-center gap-1.5">
+            <Rocket size={14} className="text-pink-500" />
+            <p>Projects</p>
+          </div>
+        </ScrollLink>
       </li>
       <li>
-        <div className="flex rounded-full justify-start items-center lg:justify-center lg:px-3 lg:py-1">
-          <SendHorizontal size={14} className="text-green-500" />
-          <p>Contact Me</p>
-        </div>
+        <ScrollLink
+          to="contact"
+          smooth
+          spy
+          offset={-100}
+          duration={500}
+          activeClass="bg-green-500/15 text-green-500"
+          className="h-fit w-full rounded-full px-4 py-2 lg:px-3 lg:py-1"
+        >
+          <div className="flex justify-center items-center gap-1.5">
+            <SendHorizontal size={14} className="text-green-500" />
+            <p>Contact Me</p>
+          </div>
+        </ScrollLink>
       </li>
     </>
   );
@@ -89,8 +139,9 @@ const Navbar = () => {
               </div>
 
               <div className="w-full flex justify-between items-center">
-                <div className="font-bold">
-                  Nil<span className="text-purple-500">andu</span>
+                <div className="font-bold flex justify-center items-center gap-1">
+                    <img src={logo} alt="logo" className="w-5 h-5 mb-1"/>
+                    <p> Nil<span className="text-purple-500">andu</span></p>
                 </div>
                 <div className="flex-1 hidden lg:flex lg:justify-center">
                   <ul className="menu menu-horizontal text-center flex justify-center gap-2">
@@ -129,12 +180,26 @@ const Navbar = () => {
           </div>
           {/* Page content here */}
           <div className="max-w-7xl mx-auto px-4">
-            <Banner></Banner>
+            <Element name="banner">
+              <Banner></Banner>
+            </Element>
+
             <AboutMe></AboutMe>
-            <TechnicalSkill></TechnicalSkill>
-            <Qualification></Qualification>
-            <Projects></Projects>
-            <ContactInfo></ContactInfo>
+            <Element name="tech">
+              <TechnicalSkill></TechnicalSkill>
+            </Element>
+
+            <Element name="journey">
+              <Qualification></Qualification>
+            </Element>
+
+            <Element name="project">
+              <Projects></Projects>
+            </Element>
+
+            <Element name="contact">
+              <ContactInfo></ContactInfo>
+            </Element>
           </div>
           <Footer></Footer>
         </div>
