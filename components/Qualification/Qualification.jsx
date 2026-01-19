@@ -37,7 +37,9 @@ const experiences = [
 
 const Card = ({ exp }) => (
   <div>
-    <h3 className="text-2xl font-bold text-base-content">{exp.role}</h3>
+    <h3 className="text-lg md:text-2xl font-bold text-base-content">
+      {exp.role}
+    </h3>
     <p className={`text-${exp.color} font-semibold uppercase text-sm `}>
       {exp.company}
     </p>
@@ -63,7 +65,7 @@ const Qualification = () => {
       {/* ================ */}
 
       {/* Timeline */}
-      <div className="relative mt-15">
+      <div className="relative">
         {/* Desktop center line */}
         <div className="hidden md:block absolute left-1/2 top-1 -translate-x-1/2 w-[2px] h-full bg-base-content/20" />
 
@@ -94,7 +96,7 @@ const Qualification = () => {
 
               {/* RIGHT CARD / MOBILE CARD */}
               <div
-                className={`md:col-span-4 pl-12 sm:pl-0 ${
+                className={`md:col-span-4 pl-12 sm:pl-12 md:pl-0 ${
                   isRight || "md:hidden"
                 }`}
               >
