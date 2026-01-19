@@ -11,7 +11,7 @@ const Banner = () => {
   };
 
   return (
-    <div className="relative">
+    <div data-aos="fade-in" data-aos-delay="180" className="relative">
       {/* Background Blob */}
       <div
         className="hidden md:block md:absolute w-[300px] h-[300px]  bg-gradient-to-br from-emerald-500/30 to-purple-500/30 blur-3xl

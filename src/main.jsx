@@ -8,6 +8,16 @@ import AppNotFound from "../components/errorElement/AppNotFound/AppNotFound.jsx"
 import PageNotFound from "../components/errorElement/PageNotFound/PageNotFound.jsx";
 import { Toaster } from "react-hot-toast";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+// Initialize AOS globally (like Toastify)
+AOS.init({
+  duration: 1000,
+  once: true,
+  easing: "ease-in-out",
+});
+
 const router = createBrowserRouter([
   {
     path: "/",

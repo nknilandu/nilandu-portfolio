@@ -4,11 +4,7 @@ import { FaGitAlt, FaHtml5, FaJava, FaPython } from "react-icons/fa";
 import { GrMysql, GrReactjs } from "react-icons/gr";
 import { IoLogoCss3, IoLogoJavascript } from "react-icons/io";
 import { IoColorPaletteSharp } from "react-icons/io5";
-import {
-  RiDatabase2Fill,
-  RiFirebaseFill,
-  RiTailwindCssFill,
-} from "react-icons/ri";
+import { RiDatabase2Fill, RiTailwindCssFill } from "react-icons/ri";
 import { SiExpress, SiFirebase } from "react-icons/si";
 import { TbBrandNextjs, TbBrandNodejs, TbBrandReact } from "react-icons/tb";
 
@@ -61,7 +57,7 @@ const TechnicalSkill = () => {
   ];
 
   return (
-    <div className="my-12">
+    <div data-aos="fade-up" data-aos-delay="100" className="my-12">
       <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center">
         Technical{" "}
         <span className="bg-gradient-to-r from-emerald-500 to-secondary bg-clip-text text-transparent">

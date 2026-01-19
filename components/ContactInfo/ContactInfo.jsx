@@ -70,7 +70,7 @@ const handleCopy = (text) => {
 
 const ContactInfo = () => {
   return (
-    <div className="mt-20">
+    <div data-aos="fade-up" data-aos-delay="100" className="mt-20">
       <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center">
         Get In{" "}
         <span className="bg-gradient-to-r from-emerald-500 to-secondary bg-clip-text text-transparent">

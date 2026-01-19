@@ -3,7 +3,7 @@ import avater from "../../src/assets/aboutMe.webp";
 
 const AboutMe = () => {
   return (
-    <div>
+    <div data-aos="fade-in" data-aos-delay="200">
       <div className="flex flex-col-reverse md:flex-row justify-center items-center gap-10">
         <div className="flex-1 flex justify-center max-w-[420px] h-fit">
           <img src={avater} alt="photo" className="object-cover w-full" />
