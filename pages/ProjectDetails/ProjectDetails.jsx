@@ -22,7 +22,7 @@ const ProjectDetails = () => {
   }, [id]);
 
   return (
-    <div className="className=max-w-5xl min-h-[85vh] mx-auto py-10 px-5">
+    <div className="max-w-5xl min-h-[85vh] mx-auto py-10 px-5">
       <div data-aos="fade-up" data-aos-delay="100">
         {loading ? (
           <div className="flex justify-center items-center h-[85vh]">
