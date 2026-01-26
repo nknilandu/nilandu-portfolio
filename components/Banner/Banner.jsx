@@ -3,13 +3,8 @@ import avater from "../../src/assets/avaterImg.webp";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa6";
 import { LuDownload } from "react-icons/lu";
-import toast from "react-hot-toast";
 
 const Banner = () => {
-  const handleDownload = () => {
-    toast("Coming Soon");
-  };
-
   return (
     <div data-aos="fade-in" data-aos-delay="180" className="relative">
       {/* Background Blob */}
@@ -117,13 +112,14 @@ const Banner = () => {
                 Say Hi
                 <Send size={15} />
               </a>
-              <button
-                onClick={handleDownload}
+              <a
+                href="/nilandu_resume.pdf"
+                download="nilandu_resume.pdf"
                 className="flex items-center justify-center gap-2 px-5 py-2 rounded-full font-bold text-sm sm:text-sm text-base-content border border-secondary/30 backdrop-blur-lg shadow-[0_0_10px_rgba(168,85,247,0.3)] transition-all duration-300 bg-secondary/5 hover:bg-secondary/10 hover:text-secondary hover:shadow-[0_0_20px_rgba(168,85,247,0.6)] hover:-translate-y-0.5"
               >
                 Download CV
                 <LuDownload size={15} />
-              </button>
+              </a>
             </div>
           </div>
 
