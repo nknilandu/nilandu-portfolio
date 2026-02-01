@@ -3,6 +3,7 @@ import avater from "../../src/assets/avaterImg.webp";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa6";
 import { LuDownload } from "react-icons/lu";
+import { TypeAnimation } from "react-type-animation";
 
 const Banner = () => {
   return (
@@ -90,7 +91,21 @@ const Banner = () => {
               </span>
               <br />
               <span className="bg-gradient-to-r from-emerald-500 to-base-content bg-clip-text text-transparent">
-                MERN STACK Developer
+                
+                <TypeAnimation
+    preRenderFirstString={true}
+    sequence={[
+      500,
+      'MERN STACK Developer', // initially rendered starting point
+      2000,
+      'Frontend-Focused',
+      1000,
+      'Full-Stack Learner',
+      500,
+    ]}
+    speed={50}
+    repeat={Infinity}
+  />
               </span>
             </h1>
 
@@ -130,7 +145,7 @@ const Banner = () => {
               <div className="absolute inset-0 z-10 border-2 border-gray-400/50 rounded-[30%_60%_50%_50%/30%_30%_40%_30%] animate-[spin_60s_linear_infinite]" />
 
               {/* Profile Image */}
-              <div className="relative z-20 w-full aspect-square rounded-[30%_70%_70%_30%/30%_30%_70%_70%] overflow-hidden border border-primary bg-base-content/10 shadow-[0_0_20px_rgba(16,185,129,0.8)]">
+              <div className="relative z-20 w-full aspect-square rounded-[30%_70%_70%_30%/30%_30%_70%_70%] overflow-hidden border border-primary/20 bg-base-content/10 shadow-[0_0_20px_rgba(16,185,129,0.8)]">
                 <img
                   src={avater}
                   alt="profile"
